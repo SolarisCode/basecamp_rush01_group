@@ -6,28 +6,19 @@
 /*   By: ckonstan <KvardekDu@ckondo.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:27:06 by ckonstan          #+#    #+#             */
-/*   Updated: 2021/10/09 23:09:50 by ckonstan         ###   ########.fr       */
+/*   Updated: 2021/10/10 00:44:49 by ckonstan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void handle_hint_4(int playground[6][6]);
+void handle_hint_1(int playground[6][6]);
+
 int	ft_solve(int playground[6][6])
 {
-	int	row;
-	int	col;
-	int	level;
+	handle_hint_4(playground);
+	handle_hint_1(playground);
+	//handle_hint_3(playground);
 
-	row = 0;
-	col = 0;
-	while (row <= 4)
-	{
-		while (col <= 4)
-		{
-			level = 0;
-			playground[row][col] = level;
-			col++;
-		}
-		row++;
-	}
 	return (0);
 }
 /* This is just a dummy function.
