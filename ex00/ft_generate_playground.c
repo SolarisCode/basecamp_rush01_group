@@ -6,7 +6,7 @@
 /*   By: ckonstan <KvardekDu@ckondo.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:34:48 by ckonstan          #+#    #+#             */
-/*   Updated: 2021/10/09 21:43:07 by ckonstan         ###   ########.fr       */
+/*   Updated: 2021/10/09 22:19:43 by ckonstan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_generate_playground(char *hints, int playground[6][6])
 	i = 0;
 	while (*(hints + i) > 0)
 	{
-		level = hints[i];
+		level = hints[i] - '0';
 		if (level != ' ')
 		{
 			set_row_and_col(i, &row, &col);
