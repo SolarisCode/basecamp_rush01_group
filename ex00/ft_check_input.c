@@ -6,7 +6,7 @@
 /*   By: ckonstan <KvardekDu@ckondo.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 17:50:29 by ckonstan          #+#    #+#             */
-/*   Updated: 2021/10/09 20:11:41 by ckonstan         ###   ########.fr       */
+/*   Updated: 2021/10/09 21:49:46 by ckonstan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_check_input(int argc, char *args[])
 	char	*parameter;
 	int		i;
 
-	if (argc != 1)
+	if (argc != 2)
 		return (-1);
 	parameter = args[1];
 	i = 0;
