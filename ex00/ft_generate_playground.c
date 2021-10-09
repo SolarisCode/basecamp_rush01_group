@@ -6,7 +6,7 @@
 /*   By: ckonstan <KvardekDu@ckondo.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:34:48 by ckonstan          #+#    #+#             */
-/*   Updated: 2021/10/09 20:55:18 by ckonstan         ###   ########.fr       */
+/*   Updated: 2021/10/09 21:43:07 by ckonstan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,24 @@ void	set_row_and_col(int i, int *row, int *col)
 	}
 }
 
+void	clear_playground(int playground[6][6])
+{
+	int	row;
+	int	col;
+
+	row = 0;
+	while (row < 6)
+	{
+		col = 0;
+		while (col < 6)
+		{
+			playground[row][col] = 0;
+			col++;
+		}
+		row++;
+	}
+}
+
 void	ft_generate_playground(char *hints, int playground[6][6])
 {
 	int		i;
@@ -41,6 +59,7 @@ void	ft_generate_playground(char *hints, int playground[6][6])
 	int		col;
 	char	level;
 
+	clear_playground(playground);
 	i = 0;
 	while (*(hints + i) > 0)
 	{
@@ -49,8 +68,8 @@ void	ft_generate_playground(char *hints, int playground[6][6])
 		{
 			set_row_and_col(i, &row, &col);
 			playground[row][col] = level;
-			i++;
 		}
+		i++;
 	}
 	return ;
 }
