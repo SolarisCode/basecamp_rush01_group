@@ -6,7 +6,7 @@
 /*   By: ckonstan <KvardekDu@ckondo.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:27:06 by ckonstan          #+#    #+#             */
-/*   Updated: 2021/10/09 23:00:57 by ckonstan         ###   ########.fr       */
+/*   Updated: 2021/10/09 23:09:50 by ckonstan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	ft_solve(int playground[6][6])
 	int	col;
 	int	level;
 
-	row = 1;
-	col = 1;
+	row = 0;
+	col = 0;
 	while (row <= 4)
 	{
 		while (col <= 4)
