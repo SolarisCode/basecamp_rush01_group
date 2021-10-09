@@ -6,7 +6,7 @@
 /*   By: ckonstan <KvardekDu@ckondo.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:27:06 by ckonstan          #+#    #+#             */
-/*   Updated: 2021/10/09 20:31:35 by ckonstan         ###   ########.fr       */
+/*   Updated: 2021/10/09 20:33:28 by ckonstan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ int	ft_solve(int playground[6][6])
 	}
 	return (-4);
 }
-/*return: 0 = success, any other value = error */
+/* This is just a dummy function.
+   I need it to compile and check the main structure. */
+/* return: 0 = success, any other value = error */
