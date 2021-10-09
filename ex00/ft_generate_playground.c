@@ -6,7 +6,7 @@
 /*   By: ckonstan <KvardekDu@ckondo.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:34:48 by ckonstan          #+#    #+#             */
-/*   Updated: 2021/10/09 22:19:43 by ckonstan         ###   ########.fr       */
+/*   Updated: 2021/10/10 00:26:23 by ckonstan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	set_row_and_col(int i, int *row, int *col)
 	}
 	if (i >= 8 && i < 16)
 	{
-		*row = (i - 6) / 2;
-		*col = 0;
+		*row = 5;
+		*col = (i - 6) / 2;
 	}
 	if (i >= 16 && i < 24)
 	{
-		*row = 5;
-		*col = (i - 14) / 2;
+		*row = (i - 14) / 2;
+		*col = 0;
 	}
 	if (i >= 24 && i < 32)
 	{
