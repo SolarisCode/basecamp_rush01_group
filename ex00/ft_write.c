@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_write.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ckonstan <KvardekDu@ckondo.de>             +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:15:44 by ckonstan          #+#    #+#             */
-/*   Updated: 2021/10/09 23:29:03 by ckonstan         ###   ########.fr       */
+/*   Updated: 2021/10/10 18:55:55 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	ft_write_result(int playground[6][6])
 	int	col;
 	int	level;
 
-	row = 1;
-	while (row <= 4)
+	row = 0;
+	while (row < 6)
 	{
-		col = 1;
-		while (col <= 4)
+		col = 0;
+		while (col < 6)
 		{
 			level = playground[row][col] + '0';
 			write(1, &level, 1);

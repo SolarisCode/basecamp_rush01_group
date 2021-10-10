@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_generate_playground.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ckonstan <KvardekDu@ckondo.de>             +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:34:48 by ckonstan          #+#    #+#             */
-/*   Updated: 2021/10/10 00:26:23 by ckonstan         ###   ########.fr       */
+/*   Updated: 2021/10/10 18:49:57 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,13 @@ void	ft_generate_playground(char *hints, int playground[6][6])
 
 	clear_playground(playground);
 	i = 0;
-	while (*(hints + i) > 0)
+	while (hints[i] > 0)
 	{
-		level = hints[i] - '0';
+		level = hints[i];
 		if (level != ' ')
 		{
 			set_row_and_col(i, &row, &col);
-			playground[row][col] = level;
+			playground[row][col] = level - '0';
 		}
 		i++;
 	}
