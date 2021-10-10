@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:34:48 by ckonstan          #+#    #+#             */
-/*   Updated: 2021/10/10 18:49:57 by coder            ###   ########.fr       */
+/*   Updated: 2021/10/10 19:29:54 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	set_row_and_col(int i, int *row, int *col)
 	}
 }
 
-void	clear_playground(int playground[6][6])
+void	clear_playground(char playground[6][6])
 {
 	int	row;
 	int	col;
@@ -52,7 +52,7 @@ void	clear_playground(int playground[6][6])
 	}
 }
 
-void	ft_generate_playground(char *hints, int playground[6][6])
+void	ft_generate_playground(char *hints, char playground[6][6])
 {
 	int		i;
 	int		row;

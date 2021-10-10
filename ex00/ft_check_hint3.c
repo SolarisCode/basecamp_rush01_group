@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 18:33:30 by coder             #+#    #+#             */
-/*   Updated: 2021/10/10 18:43:07 by coder            ###   ########.fr       */
+/*   Updated: 2021/10/10 20:44:25 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ void	ft_check_row(char *playground, char hint3[6][6])
 		flag = 0;
 		while (col < 6)
 		{
-			if (playground[col] == hint3[row][col])
-				flag ++;
+			if (playground[0] == 3 && playground[5] == hint3[row][5])
+				if (playground[col] == hint3[row][col])
+					flag ++;
 			col ++;
 		}
 		if (flag > 2)
@@ -52,8 +53,9 @@ void	ft_check_rev_row(char *playground, char hint3[6][6])
 		count = 0;
 		while (col >= 0)
 		{
-			if (playground[col] == hint3[row][count])
-				flag ++;
+			if (playground[5] == 3 && playground[0] == hint3[row][0])
+				if (playground[col] == hint3[row][count])
+					flag ++;
 			count ++;
 			col --;
 		}
@@ -76,8 +78,9 @@ void	ft_check_col(int x, char playground[6][6], char hint3[6][6])
 		flag = 0;
 		while (col < 6)
 		{
-			if (playground[col][x] == hint3[row][col])
-				flag ++;
+			if (playground[0][x] == 3 && playground[5][x] == hint3[row][5])
+				if (playground[col][x] == hint3[row][col])
+					flag ++;
 			col ++;
 		}
 		if (flag > 2)
@@ -101,8 +104,9 @@ void	ft_check_rev_col(int x, char playground[6][6], char hint3[6][6])
 		col = 0;
 		while (count >= 0)
 		{
-			if (playground[count][x] == hint3[row][col])
-				flag ++;
+			if (playground[5][x] == 3 && playground[0][x] == hint3[row][5])
+				if (playground[count][x] == hint3[row][col])
+					flag ++;
 			col ++;
 			count --;
 		}

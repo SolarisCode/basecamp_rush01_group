@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 17:50:29 by ckonstan          #+#    #+#             */
-/*   Updated: 2021/10/10 18:52:26 by coder            ###   ########.fr       */
+/*   Updated: 2021/10/10 20:41:08 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_check_input(int argc, char *args[])
 	if (args[1][i] < '1' || args[1][i] > '4')
 		return (-2);
 	i++;
-	while (args[1][i] != 0 || i > 31) // it could go to Infinite loop and 
-	{									// it could be fooled by double digit number like 25.
+	while (args[1][i] != 0 || i > 31)
+	{
 		if (args[1][i] == ' ')
 			i++;
 		if (args[1][i] < '1' || args[1][i] > '4')
