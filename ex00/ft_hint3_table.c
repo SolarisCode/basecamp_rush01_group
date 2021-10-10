@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 12:43:48 by coder             #+#    #+#             */
-/*   Updated: 2021/10/10 16:53:17 by coder            ###   ########.fr       */
+/*   Updated: 2021/10/10 17:15:33 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,28 +104,31 @@ void	ft_hint3_rev_row(char *playground, char hint3[6][6])
 	}
 }
 
-void	ft_hint3_add_col(int y, int x, playground[6][6], hint3[6][6])
+void	ft_hint3_add_col(int x, int y, int i, playground[6][6], char hint3[6][6])
 {
-	int	row;
-	int	col;
-	
-	col = x;
-	if (y == 0)
+	int count;
+
+	if (i == 0)
 	{
-		row = y;
-		while (row < 6)
+		count = i;
+		while (count < 6)
 		{
-			playground[row][col] = hint3[col][row];
-			row ++;
+			playground[count][x] = hint3[y][count];
+			count ++;
 		}
 	}
-	else if (y == 5)
+	else if (i == 5)
 	{
-		
+		count = i;
+		while (count >= 0)
+		{
+			playground[count][x] = hint3[y][count];
+			count ++;
+		}
 	}
 }
 
-void	ft_col_check(int x, char playground[6][6], hint3[6][6])
+void	ft_col_check(int x, char playground[6][6], char hint3[6][6])
 {
 	int row;
 	int col;
@@ -143,44 +146,68 @@ void	ft_col_check(int x, char playground[6][6], hint3[6][6])
 			col ++;
 		}
 		if (flag > 2)
-			
+			ft_hint3_add_col(x, row, 0, playground, hint3);
 		row ++;
 	}
 }
 
-void	ft_hint3_test_col(char playground[6][6], hint3[6][6])
+void	ft_col_rev_check(int x, char playground[6][6], char hint3[6][6])
 {
-	int	col;
-
-	col = 1;
-	while (col < 5)
+	int row;
+	int col;
+	int	flag;
+	
+	row = 0;
+	while (row < 6)
 	{
-		ft_col_check(int x, char playground[6][6], hint3[6][6])
+		col = 0;
+		flag = 0;
+		while (col < 6)
+		{
+			if (playground[col][x] == hint3[row][col])
+				flag ++;
+			col ++;
+		}
+		if (flag > 2)
+			ft_hint3_add_col(x, row, 0, playground, hint3);
+		row ++;
 	}
 }
 
-void	ft_hint3_rev_col(char playground[6][6], hint3[6][6])
-{
-	int	row;
-	int	col;
-	int	flag;
-	int	count;
+// void	ft_hint3_test_col(char playground[6][6], char hint3[6][6])
+// {
+// int	row;
+// 	int	col;
+// 	int	flag;
+// 	int	count;
 
-	col = 1;
-	while (col < 5)
+// 	col = 1;
+// 	while (col < 5)
+// 	{
+// 		row = 5;
+// 		flag = 0;
+// 		count = 0;
+// 		while (row >= 0)
+// 		{
+// 			if (playground[row][col] == hint3[col][row])
+// 				flag ++;
+// 			row --;
+// 		}
+// 		if (flag > 2)
+// 			ft_hint3_add_col(0, col, playground, hint3);
+// 		col ++;
+// 	}
+// }
+
+void	ft_hint3_rev_col(char playground[6][6], char hint3[6][6])
+{
+	int	col;
+	
+	col = 5;
+	while (col >= 1)
 	{
-		row = 5;
-		flag = 0;
-		count = 0;
-		while (row >= 0)
-		{
-			if (playground[row][col] == hint3[col][row])
-				flag ++;
-			row --;
-		}
-		if (flag > 2)
-			ft_hint3_add_col(0, col, playground, hint3);
-		col ++;
+		ft_col_rev_check(col, playground, hint3);
+		count --;
 	}
 }
 
@@ -204,6 +231,7 @@ void	ft_hint3_comp(char playground[6][6])
 		ft_col_check(col, playground, hint3);
 		col ++;
 	}
+	ft_hint3_rev_col(playground, hint3);
 }
 
 int	main(void)
